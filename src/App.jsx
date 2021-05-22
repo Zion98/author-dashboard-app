@@ -3,6 +3,8 @@ import Navbar from "./Navbar";
 import Dashboard from "./components/Dashboard";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
+import Authors from "./components/Authors";
+import Author1 from "./components/Author1";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
           <Route path="/nav" component={Navbar} />
           <Switch>
             <Route path="/nav/dashboard" component={Dashboard} />
+            <Route path="/nav/authors" component={Authors} />
+            <Route path="/nav/author1" component={Author1} />
           </Switch>
         </div>
       </Router>

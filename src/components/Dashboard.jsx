@@ -11,7 +11,7 @@ const Dashboard = () => {
           <div className="grid2"></div>
           <div className="grid4">
             <h3 className="top-authors">Top Shared Author</h3>
-            <table>
+            <table className="index">
               <tr>
                 <td>1</td>
                 <td className="author-info">
@@ -69,7 +69,7 @@ const Dashboard = () => {
           </div>
           <div className="grid5">
             <h3 className="top-posts">Top Posts</h3>
-            <table>
+            <table className="index">
               <tr>
                 <td>1</td>
                 <td>
