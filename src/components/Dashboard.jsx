@@ -1,15 +1,144 @@
 import React from "react";
+import styled from "styled-components";
+import { DashboardWrapper } from "./styled/index";
+import Bar from "./Chart";
+
+const AllBox = styled.div`
+  display: flex;
+  color: #405169;
+  font-size: 12px;
+
+  .top-authors,
+  .top-posts {
+    margin: 5px 0;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .index {
+    border-collapse: collapse;
+    width: 100%;
+    border-spacing: 0px 10px;
+  }
+
+  .index tr td:not(:first-child),
+  #table1 tr td:not(:first-child) {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid #dde9fb;
+  }
+
+  tr td:first-child {
+    font-size: 12px;
+  }
+  .author-info {
+    display: flex;
+    align-items: center;
+  }
+  .author-img {
+    padding-right: 10px;
+  }
+
+  tr:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+`;
+
+const MainBox = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+`;
+
+const Box1 = styled.div`
+  width: 50%;
+  height: 300px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  background: #ffffff;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 22px;
+    h3 {
+      margin-left: 24px;
+    }
+  }
+`;
+
+const Box2 = styled.div`
+  margin-right: 12px;
+  margin-bottom: 12px;
+  width: 46%;
+  height: 300px;
+  background: #ffffff;
+`;
+
+const Box3 = styled.div`
+  font-size: 16px;
+  padding: 24px;
+  width: 35%;
+  font-size: 16px;
+  background: #ffffff;
+
+  #table1 {
+    border-collapse: separate;
+    width: 100%;
+    border-spacing: 0px 15px;
+  }
+
+  tr {
+    padding: 20px 0;
+  }
+  .author {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+  }
+
+  .author p {
+    color: #4c60eb;
+    padding: 0 35px;
+  }
+
+  .posts,
+  .email {
+    font-size: 12px;
+  }
+
+  .email {
+    color: rgba(64, 81, 105, 0.6);
+  }
+`;
+const Box4 = styled.div`
+  width: 35%;
+  padding: 35px;
+  margin-right: 12px;
+  background: #ffffff;
+`;
+const SideBox = styled.div`
+  padding: 35px 30px;
+  width: 61%;
+  background: #ffffff;
+`;
 
 const Dashboard = () => {
   return (
-    <main>
+    <DashboardWrapper>
       <h2 className="title">DashBoard</h2>
+      <AllBox>
+        <MainBox>
+          <Box1>
+            <div>
+              <h3>Top Authors</h3>
+              <p>Last 3 months v</p>
+            </div>
+            <Bar />
+          </Box1>
+          <Box2></Box2>
 
-      <div className="main-grid">
-        <div className="flexer1">
-          <div className="grid1"></div>
-          <div className="grid2"></div>
-          <div className="grid4">
+          <Box4>
             <h3 className="top-authors">Top Shared Author</h3>
             <table className="index">
               <tr>
@@ -66,8 +195,10 @@ const Dashboard = () => {
                 <td>3.4K Shares</td>
               </tr>
             </table>
-          </div>
-          <div className="grid5">
+            {/* </div> */}
+          </Box4>
+          <SideBox>
+            {/* <div className="grid5"> */}
             <h3 className="top-posts">Top Posts</h3>
             <table className="index">
               <tr>
@@ -144,9 +275,13 @@ const Dashboard = () => {
                 <td>3.4K</td>
               </tr>
             </table>
-          </div>
-        </div>
-        <div className="grid3">
+            {/* </div> */}
+            {/* </div> */}
+          </SideBox>
+        </MainBox>
+
+        <Box3>
+          {/* <div className="grid3"> */}
           <div className="author">
             <h3>Author</h3>
             <p>
@@ -273,9 +408,10 @@ const Dashboard = () => {
               <td className="posts">120 posts</td>
             </tr>
           </table>
-        </div>
-      </div>
-    </main>
+          {/* </div> */}
+        </Box3>
+      </AllBox>
+    </DashboardWrapper>
   );
 };
 

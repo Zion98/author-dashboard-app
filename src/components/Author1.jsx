@@ -1,11 +1,79 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/authors.css";
+import styled from "styled-components";
+import { DashboardWrapper, Content } from "./styled/index";
+
+const SingleAuthor = styled(DashboardWrapper)`
+  ${Content}
+
+  .back {
+    font-weight: 500;
+    font-size: 16px;
+    color: #4c60eb;
+  }
+
+  .name-author,
+  .name-posts {
+    font-weight: bold;
+    font-size: 28px;
+    color: #405169;
+  }
+
+  .name-posts {
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  .back,
+  .name-author,
+  .name-posts {
+    margin: 10px;
+  }
+
+  .author-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  .author-header-input {
+    background-color: #fff;
+    color: #a0bce4;
+    height: 35px;
+    width: 50%;
+    border: 1px solid rgba(76, 141, 235, 0.186481);
+  }
+  .author-header-input span {
+    padding: 5px;
+  }
+  .author-header-input input {
+    height: 32px;
+    width: 96%;
+    border: none;
+  }
+
+  ::placeholder {
+    color: #a0bce4;
+    font-size: 14px;
+  }
+
+  .single td {
+    padding: 8px 10px;
+  }
+`;
+
 const Author1 = () => {
   return (
-    <div className="author-content">
-      <p className="back">
-        <span><i class="fas fa-arrow-left"></i></span>Go back
-      </p>
+    <SingleAuthor>
+      <Link to="/nav/dashboard">
+        <p className="back">
+          <span>
+            <i class="fas fa-arrow-left"></i>
+          </span>
+          Go back
+        </p>
+      </Link>
       <h2 className="name-author">Jenny Wilson</h2>
       <p className="name-posts">Jenny Wilson's Post</p>
       <div className="author-header">
@@ -17,17 +85,17 @@ const Author1 = () => {
             type="search"
             className=""
             name=""
-            placeholder="Search for Author"
+            placeholder="Search for posts"
           />
         </div>
         <div>
-        <span>Filter By:</span>
-        <select>
-          <option value="0">Select Filter:</option>
-          <option value="1">Date Posted</option>
-          <option value="2">No. of View</option>
-          <option value="3">No. of Shares</option>
-        </select>
+          <span>Filter By:</span>
+          <select className="select">
+            <option value="0">Select Filter</option>
+            <option value="1">Date Posted</option>
+            <option value="2">No. of View</option>
+            <option value="3">No. of Shares</option>
+          </select>
         </div>
       </div>
       {/* <div class="title-author">
@@ -51,7 +119,11 @@ const Author1 = () => {
             <td>1</td>
             <td class="author-name">
               <p class="author-img">{/* <img src={picture} alt="" /> */}</p>
-              <p>I LEND MY VOICE: #EndSARS, #EndPoliceIntimidation<br/>#EndPoliceBrutality</p>
+              <p>
+                I LEND MY VOICE: #EndSARS, #EndPoliceIntimidation
+                <br />
+                #EndPoliceBrutality
+              </p>
             </td>
             <td>October 17,2020</td>
             <td>120 Views</td>
@@ -61,7 +133,11 @@ const Author1 = () => {
             <td>2</td>
             <td class="author-name">
               <p class="author-img">{/* <img src={picture} alt="" /> */}</p>
-              <p>I LEND MY VOICE: #EndSARS, #EndPoliceIntimidation<br/>#EndPoliceBrutality</p>
+              <p>
+                I LEND MY VOICE: #EndSARS, #EndPoliceIntimidation
+                <br />
+                #EndPoliceBrutality
+              </p>
             </td>
             <td>October 17,2020</td>
             <td>120 Views</td>
@@ -71,7 +147,11 @@ const Author1 = () => {
             <td>3</td>
             <td class="author-name">
               <p class="author-img">{/* <img src={picture1} alt="" /> */}</p>
-              <p>I LEND MY VOICE: #EndSARS, #EndPoliceIntimidation<br/>#EndPoliceBrutality</p>
+              <p>
+                I LEND MY VOICE: #EndSARS, #EndPoliceIntimidation
+                <br />
+                #EndPoliceBrutality
+              </p>
             </td>
             <td>October 17,2020</td>
             <td>120 Views</td>
@@ -81,7 +161,11 @@ const Author1 = () => {
             <td>4</td>
             <td class="author-name">
               <p class="author-img">{/* <img src={picture2} alt="" /> */}</p>
-              <p>I LEND MY VOICE: #EndSARS, #EndPoliceIntimidation<br/>#EndPoliceBrutality</p>
+              <p>
+                I LEND MY VOICE: #EndSARS, #EndPoliceIntimidation
+                <br />
+                #EndPoliceBrutality
+              </p>
             </td>
             <td>October 17,2020</td>
             <td>120 Views</td>
@@ -91,7 +175,11 @@ const Author1 = () => {
             <td>5</td>
             <td class="author-name">
               <p class="author-img">{/* <img src={picture3} alt="" /> */}</p>
-              <p>I LEND MY VOICE: #EndSARS, #EndPoliceIntimidation<br/>#EndPoliceBrutality</p>
+              <p>
+                I LEND MY VOICE: #EndSARS, #EndPoliceIntimidation
+                <br />
+                #EndPoliceBrutality
+              </p>
             </td>
             <td>October 17,2020</td>
             <td>120 Views</td>
@@ -101,7 +189,11 @@ const Author1 = () => {
             <td>6</td>
             <td class="author-name">
               <p class="author-img">{/* <img src={picture3} alt="" /> */}</p>
-              <p>I LEND MY VOICE: #EndSARS, #EndPoliceIntimidation<br/>#EndPoliceBrutality</p>
+              <p>
+                I LEND MY VOICE: #EndSARS, #EndPoliceIntimidation
+                <br />
+                #EndPoliceBrutality
+              </p>
             </td>
             <td>October 17,2020</td>
             <td>120 Views</td>
@@ -111,7 +203,11 @@ const Author1 = () => {
             <td>7</td>
             <td class="author-name">
               <p class="author-img">{/* <img src={picture3} alt="" /> */}</p>
-              <p>I LEND MY VOICE: #EndSARS, #EndPoliceIntimidation<br/>#EndPoliceBrutality</p>
+              <p>
+                I LEND MY VOICE: #EndSARS, #EndPoliceIntimidation
+                <br />
+                #EndPoliceBrutality
+              </p>
             </td>
             <td>October 17,2020</td>
             <td>120 Views</td>
@@ -121,7 +217,11 @@ const Author1 = () => {
             <td>8</td>
             <td class="author-name">
               <p class="author-img">{/* <img src={picture3} alt="" /> */}</p>
-              <p>I LEND MY VOICE: #EndSARS, #EndPoliceIntimidation<br/>#EndPoliceBrutality</p>
+              <p>
+                I LEND MY VOICE: #EndSARS, #EndPoliceIntimidation
+                <br />
+                #EndPoliceBrutality
+              </p>
             </td>
             <td>October 17,2020</td>
             <td>120 Views</td>
@@ -129,7 +229,7 @@ const Author1 = () => {
           </tr>
         </tbody>
       </table>
-    </div>
+    </SingleAuthor>
   );
 };
 
