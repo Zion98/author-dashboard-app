@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "./Modal";
 import "../styles/authors.css";
 import styled from "styled-components";
 import { DashboardWrapper, Content } from "./styled/index";
@@ -31,50 +32,6 @@ const AuthorWrapper = styled(DashboardWrapper)`
     border: none;
   }
 
-  /* .content-table {
-    border-collapse: collapse;
-    font-size: 16px;
-    border-radius: 5px 5px 0 0;
-    overflow: hidden;
-    width: 100%;
-    color: #405169;
-    background-color: #fff;
-  }
-
-  .content-table thead tr {
-    background-color: #dde9fb;
-    color: #ffffff;
-    text-align: left;
-    font-weight: 500;
-    color: var(--dark);
-  }
-
-  .content-table th,
-  .content-table td {
-    padding: 12px 15px;
-  } */
-
-  /* .content-table td:not(:first-child){
-    padding: 5px;
-    text-align: left;
-    border-bottom: 1px solid #dde9fb;
-  } */
-
-  /* .content-table td {
-    padding: 10px 10px;
-  }
-
-  .content-table tbody tr {
-    border: 1px solid #dde9fb;
-    border-left: none;
-    border-bottom: none;
-  }
-
-  .content-table tr:hover {
-    background-color: #f5f5f5;
-    cursor: pointer;
-  } */
-
   .author-name {
     display: flex;
     align-items: center;
@@ -86,139 +43,154 @@ const AuthorWrapper = styled(DashboardWrapper)`
 `;
 
 const Authors = () => {
+  //Modal Toggle
+  const [modalInOpen, setModalIsOpen] = useState(false);
+  const modalToggle = () => {
+    setModalIsOpen(true);
+  };
+
+  const close = () => {
+    setModalIsOpen(false);
+  };
+
   return (
-    <AuthorWrapper>
-      <div class="title-author">
-        <p>Author</p>
-        <p>
-          <button class="add-author">Add Author</button>
-        </p>
-      </div>
-      <table class="content-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Author's Details</th>
-            <th>Email Address</th>
-            <th>Phone Number</th>
-            <th>No. of Posts</th>
-            <th>Total Reach</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td class="author-name">
-              <p class="author-img">
-                <img src={picture} alt="" />
-              </p>
-              <p>Jenny Wilson</p>
-            </td>
-            <td>debra.holt@gmail.com</td>
-            <td>070893935083</td>
-            <td>120 Posts</td>
-            <td>3.k Reach</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td class="author-name">
-              <p class="author-img">
-                <img src={picture} alt="" />
-              </p>
-              <p>Jenny Wilson</p>
-            </td>
-            <td>debra.holt@gmail.com</td>
-            <td>070893935083</td>
-            <td>120 Posts</td>
-            <td>3.k Reach</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td class="author-name">
-              <p class="author-img">
-                <img src={picture1} alt="" />
-              </p>
-              <p>Jenny Wilson</p>
-            </td>
+    <>
+      <AuthorWrapper>
+        <div class="title-author">
+          <p>Author</p>
+          <p>
+            <button class="add-author" onClick={() => modalToggle()}>
+              Add Author
+            </button>
+          </p>
+        </div>
+        <table class="content-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Author's Details</th>
+              <th>Email Address</th>
+              <th>Phone Number</th>
+              <th>No. of Posts</th>
+              <th>Total Reach</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td class="author-name">
+                <p class="author-img">
+                  <img src={picture} alt="" />
+                </p>
+                <p>Jenny Wilson</p>
+              </td>
+              <td>debra.holt@gmail.com</td>
+              <td>070893935083</td>
+              <td>120 Posts</td>
+              <td>3.k Reach</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td class="author-name">
+                <p class="author-img">
+                  <img src={picture} alt="" />
+                </p>
+                <p>Jenny Wilson</p>
+              </td>
+              <td>debra.holt@gmail.com</td>
+              <td>070893935083</td>
+              <td>120 Posts</td>
+              <td>3.k Reach</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td class="author-name">
+                <p class="author-img">
+                  <img src={picture1} alt="" />
+                </p>
+                <p>Jenny Wilson</p>
+              </td>
 
-            <td>debra.holt@gmail.com</td>
-            <td>070893935083</td>
-            <td>120 Posts</td>
-            <td>3.k Reach</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td class="author-name">
-              <p class="author-img">
-                <img src={picture2} alt="" />
-              </p>
-              <p>Jenny Wilson</p>
-            </td>
+              <td>debra.holt@gmail.com</td>
+              <td>070893935083</td>
+              <td>120 Posts</td>
+              <td>3.k Reach</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td class="author-name">
+                <p class="author-img">
+                  <img src={picture2} alt="" />
+                </p>
+                <p>Jenny Wilson</p>
+              </td>
 
-            <td>debra.holt@gmail.com</td>
-            <td>070893935083</td>
-            <td>120 Posts</td>
-            <td>3.k Reach</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td class="author-name">
-              <p class="author-img">
-                <img src={picture3} alt="" />
-              </p>
-              <p>Jenny Wilson</p>
-            </td>
+              <td>debra.holt@gmail.com</td>
+              <td>070893935083</td>
+              <td>120 Posts</td>
+              <td>3.k Reach</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td class="author-name">
+                <p class="author-img">
+                  <img src={picture3} alt="" />
+                </p>
+                <p>Jenny Wilson</p>
+              </td>
 
-            <td>debra.holt@gmail.com</td>
-            <td>070893935083</td>
-            <td>120 Posts</td>
-            <td>3.k Reach</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td class="author-name">
-              <p class="author-img">
-                <img src={picture3} alt="" />
-              </p>
-              <p>Jenny Wilson</p>
-            </td>
+              <td>debra.holt@gmail.com</td>
+              <td>070893935083</td>
+              <td>120 Posts</td>
+              <td>3.k Reach</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td class="author-name">
+                <p class="author-img">
+                  <img src={picture3} alt="" />
+                </p>
+                <p>Jenny Wilson</p>
+              </td>
 
-            <td>debra.holt@gmail.com</td>
-            <td>070893935083</td>
-            <td>120 Posts</td>
-            <td>3.k Reach</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td class="author-name">
-              <p class="author-img">
-                <img src={picture3} alt="" />
-              </p>
-              <p>Jenny Wilson</p>
-            </td>
+              <td>debra.holt@gmail.com</td>
+              <td>070893935083</td>
+              <td>120 Posts</td>
+              <td>3.k Reach</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td class="author-name">
+                <p class="author-img">
+                  <img src={picture3} alt="" />
+                </p>
+                <p>Jenny Wilson</p>
+              </td>
 
-            <td>debra.holt@gmail.com</td>
-            <td>070893935083</td>
-            <td>120 Posts</td>
-            <td>3.k Reach</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td class="author-name">
-              <p class="author-img">
-                <img src={picture3} alt="" />
-              </p>
-              <p>Jenny Wilson</p>
-            </td>
-            <td>debra.holt@gmail.com</td>
-            <td>070893935083</td>
-            <td>120 Posts</td>
-            <td>3.k Reach</td>
-          </tr>
-        </tbody>
-      </table>
-      {/* </div> */}
-    </AuthorWrapper>
+              <td>debra.holt@gmail.com</td>
+              <td>070893935083</td>
+              <td>120 Posts</td>
+              <td>3.k Reach</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td class="author-name">
+                <p class="author-img">
+                  <img src={picture3} alt="" />
+                </p>
+                <p>Jenny Wilson</p>
+              </td>
+              <td>debra.holt@gmail.com</td>
+              <td>070893935083</td>
+              <td>120 Posts</td>
+              <td>3.k Reach</td>
+            </tr>
+          </tbody>
+        </table>
+      </AuthorWrapper>
+
+      {modalInOpen && <Modal close={close} />}
+    </>
   );
 };
 

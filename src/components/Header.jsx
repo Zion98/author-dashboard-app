@@ -15,13 +15,9 @@ const Headers = styled.div`
   width: 100%;
   z-index: 3;
 
-  input:focus {
-    outline: none;
-  }
-
   .header-input {
     height: 35px;
-    width: 20%;
+    min-width: 20%;
     border: 1px solid rgba(76, 141, 235, 0.186481);
   }
   .header-input span {
@@ -29,13 +25,19 @@ const Headers = styled.div`
   }
   input {
     height: 32px;
-    width: 90%;
+    min-width: 90%;
     border: none;
   }
 
   ::placeholder {
     color: #a0bce4;
     font-size: 14px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    input {
+      min-width: 84%;
+    }
   }
 `;
 

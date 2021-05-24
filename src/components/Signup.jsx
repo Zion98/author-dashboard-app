@@ -18,7 +18,7 @@ const Signup = () => {
           <input type="password" name="password" />
         </label>
 
-        <button type="submit">Sign in</button>
+        <button type="submit">Sign Up</button>
       </form>
     </Form>
   );

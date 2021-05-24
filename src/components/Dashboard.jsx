@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { DashboardWrapper } from "./styled/index";
 import Bar from "./Chart";
 
+const column = "column";
 const AllBox = styled.div`
   display: flex;
   color: #405169;
@@ -42,12 +43,20 @@ const AllBox = styled.div`
     background-color: #f5f5f5;
     cursor: pointer;
   }
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: ${column};
+  }
 `;
 
 const MainBox = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: ${column};
+  }
 `;
 
 const Box1 = styled.div`
@@ -65,6 +74,10 @@ const Box1 = styled.div`
       margin-left: 24px;
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 95%;
+  }
 `;
 
 const Box2 = styled.div`
@@ -73,6 +86,11 @@ const Box2 = styled.div`
   width: 46%;
   height: 300px;
   background: #ffffff;
+
+  @media only screen and (max-width: 768px) {
+    width: 95%;
+    margin: 0;
+  }
 `;
 
 const Box3 = styled.div`
@@ -110,17 +128,31 @@ const Box3 = styled.div`
   .email {
     color: rgba(64, 81, 105, 0.6);
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 95%;
+    margin: 12px 0;
+  }
 `;
 const Box4 = styled.div`
   width: 35%;
   padding: 35px;
   margin-right: 12px;
   background: #ffffff;
+
+  @media only screen and (max-width: 768px) {
+    width: 95%;
+    margin: 12px 0;
+  }
 `;
 const SideBox = styled.div`
   padding: 35px 30px;
   width: 61%;
   background: #ffffff;
+
+  @media only screen and (max-width: 768px) {
+    width: 95%;
+  }
 `;
 
 const Dashboard = () => {

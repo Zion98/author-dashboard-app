@@ -9,6 +9,10 @@ export const Containers = styled.div`
   grid-template-rows: auto auto;
   grid-gap: 4px 20px;
   background-color: #f9faff;
+
+  input:focus {
+    outline: none;
+  }
 `;
 
 export const DashboardWrapper = styled.div`
@@ -65,7 +69,7 @@ export const Content = css`
   }
 `;
 
-export const Form = styled.div`
+export const CenterPosition = css`
   margin: 0 auto;
   position: absolute;
   top: 50%;
@@ -73,7 +77,11 @@ export const Form = styled.div`
   transform: translate(-50%, -50%);
   background: #fff;
   padding: 50px 50px;
-  width: 32%;
+  min-width: 32%;
+`;
+
+export const Form = styled.div`
+  ${CenterPosition}
 
   .logo {
     text-align: center;
@@ -149,5 +157,9 @@ export const Form = styled.div`
 
   .have-account span {
     color: #4c60eb;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 90%;
   }
 `;

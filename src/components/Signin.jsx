@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Form } from "./styled/index";
 import "../styles/form.css";
 const Signin = () => {
@@ -20,10 +21,14 @@ const Signin = () => {
           <input type="password" name="password" />
         </label>
 
-        <button type="submit">Sign in</button>
-        <p class="have-account">
-          Don't have an account? <span>Sign up</span>
-        </p>
+        <Link to="/nav/dashboard">
+          <button type="submit">Sign in</button>
+        </Link>
+        <Link to="/signup">
+          <p class="have-account">
+            Don't have an account? <span>Sign up</span>
+          </p>
+        </Link>
       </form>
     </Form>
   );
