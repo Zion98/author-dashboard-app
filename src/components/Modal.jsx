@@ -85,7 +85,7 @@ const Modal = ({ close }) => {
             </p>
           </div>
           <div class="single-author-img">
-            <img src={author} alt="author-picture" />
+            <img src={author} alt="author" />
           </div>
           <form action="" class="forms">
             <label for="name">
