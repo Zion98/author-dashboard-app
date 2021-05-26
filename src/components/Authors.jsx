@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import Modal from "./Modal";
+import Pagination from "./Pagination";
 import "../styles/authors.css";
 import styled from "styled-components";
 import { DashboardWrapper, Content } from "./styled/index";
@@ -53,6 +55,12 @@ const Authors = () => {
     setModalIsOpen(false);
   };
 
+  //Clickable rows
+  const history = useHistory();
+  const handleRowClick = (row) => {
+    history.push(`/nav/author1/${row}`);
+  };
+
   return (
     <>
       <AuthorWrapper>
@@ -76,7 +84,7 @@ const Authors = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr onClick={() => handleRowClick("jenny")}>
               <td>1</td>
               <td class="author-name">
                 <p class="author-img">
@@ -87,9 +95,10 @@ const Authors = () => {
               <td>debra.holt@gmail.com</td>
               <td>070893935083</td>
               <td>120 Posts</td>
-              <td>3.k Reach</td>
+              <td>3.4k Reach</td>
             </tr>
-            <tr>
+
+            <tr onClick={() => handleRowClick("jenny")}>
               <td>2</td>
               <td class="author-name">
                 <p class="author-img">
@@ -100,9 +109,9 @@ const Authors = () => {
               <td>debra.holt@gmail.com</td>
               <td>070893935083</td>
               <td>120 Posts</td>
-              <td>3.k Reach</td>
+              <td>3.4k Reach</td>
             </tr>
-            <tr>
+            <tr onClick={() => handleRowClick("jenny")}>
               <td>3</td>
               <td class="author-name">
                 <p class="author-img">
@@ -114,7 +123,7 @@ const Authors = () => {
               <td>debra.holt@gmail.com</td>
               <td>070893935083</td>
               <td>120 Posts</td>
-              <td>3.k Reach</td>
+              <td>3.4k Reach</td>
             </tr>
             <tr>
               <td>4</td>
@@ -128,7 +137,7 @@ const Authors = () => {
               <td>debra.holt@gmail.com</td>
               <td>070893935083</td>
               <td>120 Posts</td>
-              <td>3.k Reach</td>
+              <td>3.4k Reach</td>
             </tr>
             <tr>
               <td>5</td>
@@ -142,7 +151,7 @@ const Authors = () => {
               <td>debra.holt@gmail.com</td>
               <td>070893935083</td>
               <td>120 Posts</td>
-              <td>3.k Reach</td>
+              <td>3.4k Reach</td>
             </tr>
             <tr>
               <td>6</td>
@@ -156,7 +165,7 @@ const Authors = () => {
               <td>debra.holt@gmail.com</td>
               <td>070893935083</td>
               <td>120 Posts</td>
-              <td>3.k Reach</td>
+              <td>3.4k Reach</td>
             </tr>
             <tr>
               <td>7</td>
@@ -170,7 +179,7 @@ const Authors = () => {
               <td>debra.holt@gmail.com</td>
               <td>070893935083</td>
               <td>120 Posts</td>
-              <td>3.k Reach</td>
+              <td>3.4k Reach</td>
             </tr>
             <tr>
               <td>8</td>
@@ -183,10 +192,11 @@ const Authors = () => {
               <td>debra.holt@gmail.com</td>
               <td>070893935083</td>
               <td>120 Posts</td>
-              <td>3.k Reach</td>
+              <td>3.4k Reach</td>
             </tr>
           </tbody>
         </table>
+        <Pagination />
       </AuthorWrapper>
 
       {modalInOpen && <Modal close={close} />}

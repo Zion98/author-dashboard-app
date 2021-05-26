@@ -20,7 +20,7 @@ function App() {
           <Switch>
             <Route path="/nav/dashboard" component={Dashboard} />
             <Route path="/nav/authors" component={Authors} />
-            <Route path="/nav/author1" component={Author1} />
+            <Route path="/nav/author1/:authorname" component={Author1} />
           </Switch>
           </Containers>
       </Router>

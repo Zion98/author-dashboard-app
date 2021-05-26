@@ -4,21 +4,25 @@ import styled from "styled-components";
 import author from "../assets/author.svg";
 import { CenterPosition } from "./styled/index";
 
-const OVERLAY = {
-  position: "absolute",
-  top: 0,
-  bottom: 0,
-  left: 0,
-  right: 0,
-  backgroundColor: "rgba(0,0,0,.7)",
-  zIndex: 2000,
-};
+const OVERLAY = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+`;
 
 const ModalBox = styled.div`
   ${CenterPosition}
+
+  min-width: 42%;
   position: fixed;
   background: #fff;
   z-index: 4000;
+  opacity: 1;
 
   .modal-title {
     display: flex;
@@ -44,6 +48,7 @@ const ModalBox = styled.div`
     letter-spacing: 1.125px;
     text-transform: uppercase;
     color: #181426;
+    margin: 10px 0;
   }
 
   input,
@@ -76,7 +81,7 @@ const ModalBox = styled.div`
 const Modal = ({ close }) => {
   return ReactDom.createPortal(
     <>
-      <div style={OVERLAY}>
+      <OVERLAY>
         <ModalBox>
           <div class="modal-title">
             <h3>Add Title</h3>
@@ -109,7 +114,7 @@ const Modal = ({ close }) => {
             <button type="submit">Add Author</button>
           </form>
         </ModalBox>
-      </div>
+      </OVERLAY>
     </>,
     document.getElementById("portal")
   );

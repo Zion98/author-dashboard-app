@@ -8,7 +8,7 @@ const Signup = () => {
       <p class="proceed">Please enter your credentials to proceed</p>
       <form action="" class="forms">
         <label for="email">
-          <p class="address">EMAIL ADDRESS</p>
+          <p class="address mail">EMAIL ADDRESS</p>
           <input type="email" name="email" autocomplete="email" />
         </label>
         <label for="password">

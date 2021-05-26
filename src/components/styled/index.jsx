@@ -87,7 +87,7 @@ export const Form = styled.div`
     text-align: center;
     width: 71px;
     height: 71px;
-    margin: 12px auto;
+    margin: 10px auto;
     border: 1px solid #ffffff;
     background: #4c60eb;
     font-size: 15px;
@@ -96,11 +96,16 @@ export const Form = styled.div`
     line-height: 71px;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   .sign-in-title {
     font-weight: 300;
     font-size: 34px;
-
     text-align: left;
+    margin-bottom: 5px;
+    color: #405169;
   }
   .proceed {
     font-size: 15px;
@@ -108,15 +113,23 @@ export const Form = styled.div`
   }
 
   form {
-    padding: 12px 5px;
+    padding: 10px 5px;
     font-size: 12px;
+  }
+
+  .mail,
+  .password-title {
+    margin: 10px 0;
+  }
+
+  .mail {
+    margin-top: 40px;
   }
 
   .address,
   .password {
     font-weight: 500;
     font-size: 12px;
-    line-height: 14px;
     letter-spacing: 1.125px;
     text-transform: uppercase;
     color: #405169;
@@ -129,7 +142,7 @@ export const Form = styled.div`
 
   .forgot {
     font-size: 15px;
-    color: rgba(64, 81, 105, 0.5);
+    color: hsla(215.1219512195122, 24.2603550295858%, 33.13725490196078%, 0.5);
   }
 
   input,
@@ -140,10 +153,11 @@ export const Form = styled.div`
     background: rgba(76, 141, 235, 0.10077);
     border: 1px solid rgba(76, 141, 235, 0.10077);
     border-radius: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
   button {
+    margin-top: 20px;
     font-size: 15px;
     color: #fff;
     background: #4c60eb;

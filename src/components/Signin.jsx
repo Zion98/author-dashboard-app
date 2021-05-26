@@ -10,7 +10,7 @@ const Signin = () => {
       <p class="proceed">Please enter your credentials to proceed</p>
       <form action="" class="forms">
         <label for="email">
-          <p class="address">EMAIL ADDRESS</p>
+          <p class="address mail">EMAIL ADDRESS</p>
           <input type="email" name="email" autocomplete="email" />
         </label>
         <label for="password">
@@ -24,11 +24,13 @@ const Signin = () => {
         <Link to="/nav/dashboard">
           <button type="submit">Sign in</button>
         </Link>
-        <Link to="/signup">
-          <p class="have-account">
-            Don't have an account? <span>Sign up</span>
-          </p>
-        </Link>
+
+        <p class="have-account">
+          Don't have an account?{" "}
+          <Link to="/signup">
+            <span>Sign up</span>
+          </Link>
+        </p>
       </form>
     </Form>
   );

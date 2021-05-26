@@ -1,28 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Pagination from "./Pagination";
 import "../styles/authors.css";
 import styled from "styled-components";
 import { DashboardWrapper, Content } from "./styled/index";
 
 const SingleAuthor = styled(DashboardWrapper)`
   ${Content}
-
+  a {
+    text-decoration: none;
+  }
   .back {
     font-weight: 500;
     font-size: 16px;
     color: #4c60eb;
+
+    span {
+      margin-right: 5px;
+    }
   }
 
   .name-author,
   .name-posts {
     font-weight: bold;
-    font-size: 28px;
+    font-size: 22px;
     color: #405169;
   }
 
   .name-posts {
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .back,
@@ -229,6 +236,7 @@ const Author1 = () => {
           </tr>
         </tbody>
       </table>
+      <Pagination/>
     </SingleAuthor>
   );
 };

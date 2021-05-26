@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import home from "../assets/home.svg";
 import people from "../assets/people.svg";
 import settings from "../assets/Vector.svg";
-
+import logout from "../assets/logout.svg";
 const SideBar = styled.div`
   grid-area: nav;
   font-family: "Bree Serif", serif;
@@ -34,6 +34,10 @@ const SideBar = styled.div`
 
   a {
     text-decoration: none;
+  }
+
+  .logout {
+    margin-top: 350px;
   }
 `;
 
@@ -77,6 +81,15 @@ const Sidebar = () => {
         to="/nav/author1"
       >
         <img src={settings} alt="single-authors-page-icon" />
+      </NavLink>
+
+      <NavLink
+        className="icons logout"
+        exact
+        activeClassName="active"
+        to="/nav/logout"
+      >
+        <img src={logout} alt="single-authors-page-icon" />
       </NavLink>
     </SideBar>
   );
