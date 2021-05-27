@@ -48,6 +48,7 @@ const StyledDiv = styled.div`
   .icons {
     background: rgba(235, 235, 253, 0.6);
     width: 2rem;
+    max-height: 2rem;
     display: flex;
     justify-content: center;
     padding: 0.4rem 0.5rem;
