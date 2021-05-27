@@ -98,6 +98,11 @@ const StyledDiv = styled.div`
     cursor: pointer;
   }
   @media only screen and (min-width: 320px) and (max-width: 768px) {
+    background: #fff;
+    border-radius: 5px;
+    color: #909eb1;
+    min-height: 26rem;
+    position: relative;
     .prof-heading {
       border-bottom: 1px solid rgb(237, 237, 238);
       padding: 2.4rem 1rem;
@@ -121,8 +126,8 @@ const StyledDiv = styled.div`
       opacity: 0.9;
       cursor: pointer;
     }
-    .text-area{
-        margin-left: 0.4rem !important;
+    .text-area {
+      margin-left: 0.4rem !important;
     }
   }
 `;

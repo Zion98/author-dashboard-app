@@ -78,7 +78,7 @@ const StyledDiv = styled.div`
   }
   .copy-div {
     background: rgba(76, 141, 235, 0.1077);
-    padding: 0.5rem 1rem 0.5rem 2rem;
+    padding: 0.9rem 1rem 0.5rem 2rem;
   }
   .button-span {
     float: right;

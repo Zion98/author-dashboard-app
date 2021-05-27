@@ -66,7 +66,7 @@ const AddWebsite = ({ handleToggle, setWebsites, websites }) => {
 
 
 const OVERLAY = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -74,6 +74,9 @@ const OVERLAY = styled.div`
   background: rgba(197, 197, 197, 0.5);
   z-index: 1000;
   backdrop-filter: blur(2px);
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const StyledDiv = styled.div`
@@ -115,7 +118,7 @@ const StyledDiv = styled.div`
     border-radius: 5px;
     padding: 1.5rem 0.8rem 3rem 0.8rem;
     color: #000;
-    top: 50%;
+    top: 25%;
     left: 15%;
     position: absolute;
   }

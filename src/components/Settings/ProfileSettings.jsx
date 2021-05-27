@@ -101,10 +101,10 @@ const StyledDiv = styled.div`
   }
   .prof-heading {
     border-bottom: 1px solid rgb(237, 237, 238);
-    padding: 2.4rem 2rem;
+    padding: 1.4rem 2rem;
   }
   .prof-div {
-    padding: 2.4rem 2rem 11.4rem 2rem;
+    padding: 1.4rem 2rem 7.4rem 2rem;
   }
   .label {
     font-weight: 500;
@@ -113,7 +113,7 @@ const StyledDiv = styled.div`
   .cam-span {
     position: absolute;
     left: 30rem;
-    top: 27rem;
+    top: 22rem;
   }
   .button-control {
     float: right;
@@ -138,7 +138,7 @@ const StyledDiv = styled.div`
     .cam-span {
       position: absolute;
       left: 13rem;
-      top: 42rem;
+      top: 37rem;
     }
     .save-btn {
       background: #4c60eb;
@@ -172,7 +172,7 @@ const StyledDiv = styled.div`
     .cam-span {
       position: absolute !important;
       left: 26rem !important;
-      top: 27rem !important;
+      top: 21rem !important;
     }
   }
 `;

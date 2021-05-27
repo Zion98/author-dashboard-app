@@ -13,7 +13,7 @@ const SettingsRender = ({ activeModal, handleToggle }) => {
   return (
     <StyledDiv>
       <h3 className="setting">Settings</h3>
-      <div className="settings-grid-container mt-5">
+      <div className="settings-grid-container mt-4">
         <div>
           {" "}
           <SettingsNavigation active={active} setActive={setActive} />
