@@ -1,10 +1,11 @@
-import REACT, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import styled from "styled-components";
 
 const Token = () => {
     const Ref = useRef(null);
     const [copySuccess, setCopySuccess] = useState("");
     console.log(Ref)
+    console.log(copySuccess)
 
      const copyText = (e) => {
        Ref.current.select();

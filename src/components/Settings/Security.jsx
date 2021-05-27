@@ -1,4 +1,4 @@
-import REACT from "react";
+// import react from "react";
 import styled from "styled-components";
 
 const Security = () => {

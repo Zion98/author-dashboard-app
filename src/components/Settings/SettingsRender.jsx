@@ -4,6 +4,7 @@ import SettingsNavigation from "./SettingsNavigation";
 import ProfileSettings from "./ProfileSettings";
 import Security from "./Security";
 import Connect from "./Connect";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { DashboardWrapper } from "../styled/index";
 import Token from "./Token";
 

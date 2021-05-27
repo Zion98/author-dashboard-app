@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Containers } from "./components/styled/index";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./Navbar";
 import Dashboard from "./components/Dashboard";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import Authors from "./components/Authors";
 import Author1 from "./components/Author1";
-// import ErrorPage from "./components/Error"
 import SettingsRender from "./components/Settings/SettingsRender";
-import styled from "styled-components";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [activeModal, setActiveModal] = useState(false);
@@ -31,7 +29,6 @@ function App() {
             <Route path="/nav/author1/:authorname" component={Author1} />
               <Route path="/nav/dashboard" component={Dashboard} />
               <Route path="/nav/authors" component={Authors} />
-              {/* <Route path="/nav/author1" component={Author1} /> */}
               <Route path="/nav/settings">
                 <SettingsRender
                   activeModal={activeModal}

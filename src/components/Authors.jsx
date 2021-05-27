@@ -13,7 +13,6 @@ import picture3 from "../assets/Rectangle 14.svg";
 // const Content
 const AuthorWrapper = styled(DashboardWrapper)`
   ${Content}
-
   .title-author {
     display: flex;
     justify-content: space-between;

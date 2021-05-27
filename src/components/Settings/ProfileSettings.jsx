@@ -1,4 +1,4 @@
-import REACT from "react";
+// import react from "react";
 import styled from "styled-components";
 
 const ProfileSettings = () => {
@@ -13,7 +13,7 @@ const ProfileSettings = () => {
         <div>
           <span>
             {" "}
-            <img src="/images/info-picture.svg" alt="profile-image" />
+            <img src="/images/info-picture.svg" alt="" />
           </span>
 
           <span className="cam-span">

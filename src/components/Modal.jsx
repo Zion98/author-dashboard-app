@@ -5,14 +5,19 @@ import author from "../assets/author.svg";
 import { CenterPosition } from "./styled/index";
 
 const OVERLAY = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 1000;
+
   backdrop-filter: blur(2px);
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const ModalBox = styled.div`
@@ -51,6 +56,10 @@ const ModalBox = styled.div`
     margin: 10px 0;
   }
 
+  .forgot {
+    margin: 0;
+  }
+
   input,
   button {
     width: 100%;
@@ -76,6 +85,10 @@ const ModalBox = styled.div`
     color: #fff;
     background: #4c60eb;
   }
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    width: 85%;
+  }
 `;
 
 const Modal = ({ close }) => {
@@ -93,24 +106,17 @@ const Modal = ({ close }) => {
             <img src={author} alt="author" />
           </div>
           <form action="" class="forms">
-            <label for="name">
-              <p class="address">Full Name</p>
-              <input type="text" name="name" placeholder="Full Name" />
-            </label>
-            <label for="email">
-              <p class="address">EMAIL ADDRESS</p>
-              <input
-                type="email"
-                name="email"
-                autocomplete="email"
-                placeholder="Email Address"
-              />
-            </label>
-            <label for="number">
-              <p class="address">Phone Number</p>
-              <input type="number" name="number" placeholder="Phone Number" />
-            </label>
-
+            <p class="address">Full Name</p>
+            <input type="text" name="name" placeholder="Full Name" />
+            <p class="address">EMAIL ADDRESS</p>
+            <input
+              type="email"
+              name="email"
+              autocomplete="email"
+              placeholder="Email Address"
+            />
+            <p class="address">Phone Number</p>
+            <input type="number" name="number" placeholder="Phone Number" />
             <button type="submit">Add Author</button>
           </form>
         </ModalBox>
