@@ -1,20 +1,13 @@
-import { useState, useRef } from "react";
+import  { useRef } from "react";
 import styled from "styled-components";
 
 const Token = () => {
-    const Ref = useRef(null);
-    const [copySuccess, setCopySuccess] = useState("");
-    console.log(Ref)
-    console.log(copySuccess)
+  const Ref = useRef(null);
 
-     const copyText = (e) => {
-       Ref.current.select();
-       document.execCommand("copy");
-      e.target.focus()
-       setCopySuccess("Copied!");
-     };
+  const copyText = (e) => {
+     navigator.clipboard.writeText(Ref.current.value)
+  };
 
-    
   return (
     <StyledDiv>
       <div>
@@ -29,11 +22,17 @@ const Token = () => {
               Copy this code and paste it on the header section of your website
             </p>
             <div className="copy-div">
-              <input
-                className="copy-text"
-                placeholder="KGFHKJDHFH8377643987!@#$#$JHBCB4"
-                ref={Ref}
-              />
+              <label htmlFor="copy" className="copy-text">
+                <input
+                  style={{ display: "none" }}
+                  id="copy"
+                  type="checkbox"
+                  value="KGFHKJDHFH8377643987!@#$#$JHBCB4"
+                  ref={Ref}
+                  checked
+                />
+                KGFHKJDHFH8377643987!@#$#$JHBCB4
+              </label>
 
               <span className="button-span">
                 <button className="copy-btn" onClick={copyText}>
@@ -99,7 +98,7 @@ const StyledDiv = styled.div`
     background: rgba(76, 141, 235, 0.00011);
     width: 60%;
   }
-  @media only screen and (min-width: 320px) and (max-width: 768px) {
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
     .copy-text {
       color: #405169;
       font-size: 0.6rem;
@@ -134,8 +133,8 @@ const StyledDiv = styled.div`
       background: rgba(76, 141, 235, 0.10077);
       padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     }
-    .copy-btn{
-        margin-top: 1rem;
+    .copy-btn {
+      margin-top: 1rem;
     }
   }
 `;

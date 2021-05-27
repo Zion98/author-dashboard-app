@@ -1,4 +1,4 @@
-import REACT, { useState } from "react";
+import  { useState } from "react";
 import styled from "styled-components";
 import AddWebsite from "./AddWebsite";
 
@@ -42,7 +42,6 @@ const Connect = ({ activeModal, handleToggle }) => {
         {activeModal ? (
           <AddWebsite
             handleToggle={handleToggle}
-            websites={websites}
             setWebsites={setWebsites}
             websites={websites}
           />

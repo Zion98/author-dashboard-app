@@ -8,7 +8,6 @@ import Signup from "./components/Signup";
 import Authors from "./components/Authors";
 import Author1 from "./components/Author1";
 import SettingsRender from "./components/Settings/SettingsRender";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [activeModal, setActiveModal] = useState(false);
@@ -42,11 +41,5 @@ function App() {
   );
 }
 
-// const StyledDiv = styled.div`
-//   .bg {
-//     background: rgba(197, 197, 197, 0.5) !important;
-//   }
-// `;
-// className={`wrapper ${activeModal ? "bg" : ""}`}
 
 export default App;

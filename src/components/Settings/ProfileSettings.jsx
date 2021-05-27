@@ -1,4 +1,3 @@
-// import react from "react";
 import styled from "styled-components";
 
 const ProfileSettings = () => {
@@ -13,7 +12,7 @@ const ProfileSettings = () => {
         <div>
           <span>
             {" "}
-            <img src="/images/info-picture.svg" alt="" />
+            <img src="/images/info-picture.svg" alt="profile" />
           </span>
 
           <span className="cam-span">
@@ -160,6 +159,13 @@ const StyledDiv = styled.div`
       font-weight: 400;
       color: #405169;
     }
+    /* .prof-div {
+      padding: 2.4rem 1rem 11.4rem 1rem;
+    }
+    .prof-heading {
+      border-bottom: 1px solid rgb(237, 237, 238);
+      padding: 2.4rem 1rem;
+    } */
   }
 
   @media only screen and (min-width: 1024px) and (max-width: 1366px) {
