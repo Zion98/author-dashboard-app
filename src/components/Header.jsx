@@ -29,12 +29,12 @@ const Headers = styled.div`
     border: none;
   }
 
-  ::placeholder {
+  input::placeholder {
     color: #a0bce4;
     font-size: 14px;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
     input {
       min-width: 84%;
     }

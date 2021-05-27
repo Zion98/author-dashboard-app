@@ -9,17 +9,14 @@ const Signin = () => {
       <h2 class="sign-in-title">Sign in</h2>
       <p class="proceed">Please enter your credentials to proceed</p>
       <form action="" class="forms">
-        <label for="email">
-          <p class="address mail">EMAIL ADDRESS</p>
-          <input type="email" name="email" autocomplete="email" />
-        </label>
-        <label for="password">
-          <div class="password-title">
-            <p class="password">PASSWORD</p>
-            <p class="forgot">Forgot password?</p>
-          </div>
-          <input type="password" name="password" />
-        </label>
+        <p class="address mail">EMAIL ADDRESS</p>
+        <input type="email" name="email" autocomplete="email" />
+
+        <div class="password-title">
+          <p class="password">PASSWORD</p>
+          <p class="forgot">Forgot password?</p>
+        </div>
+        <input type="password" name="password" />
 
         <Link to="/nav/dashboard">
           <button type="submit">Sign in</button>

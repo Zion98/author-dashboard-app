@@ -53,7 +53,6 @@ const Circle = styled.div`
 const Sidebar = () => {
   return (
     <SideBar>
-      {/* <p className="circle"></p> */}
       <Circle />
 
       <NavLink
@@ -78,7 +77,7 @@ const Sidebar = () => {
         className="icons"
         exact
         activeClassName="active"
-        to="/nav/author1"
+        to="/nav/settings"
       >
         <img src={settings} alt="single-authors-page-icon" />
       </NavLink>
@@ -87,7 +86,7 @@ const Sidebar = () => {
         className="icons logout"
         exact
         activeClassName="active"
-        to="/nav/logout"
+        to="/"
       >
         <img src={logout} alt="single-authors-page-icon" />
       </NavLink>

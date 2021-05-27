@@ -7,16 +7,12 @@ const Signup = () => {
       <h2 class="sign-in-title">Sign up</h2>
       <p class="proceed">Please enter your credentials to proceed</p>
       <form action="" class="forms">
-        <label for="email">
-          <p class="address mail">EMAIL ADDRESS</p>
-          <input type="email" name="email" autocomplete="email" />
-        </label>
-        <label for="password">
-          <div class="password-title">
-            <p class="password">PASSWORD</p>
-          </div>
-          <input type="password" name="password" />
-        </label>
+        <p class="address mail">EMAIL ADDRESS</p>
+        <input type="email" name="email" autocomplete="email" />
+        <div class="password-title">
+          <p class="password">PASSWORD</p>
+        </div>
+        <input type="password" name="password" />
 
         <button type="submit">Sign Up</button>
       </form>

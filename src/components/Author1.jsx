@@ -5,70 +5,6 @@ import "../styles/authors.css";
 import styled from "styled-components";
 import { DashboardWrapper, Content } from "./styled/index";
 
-const SingleAuthor = styled(DashboardWrapper)`
-  ${Content}
-  a {
-    text-decoration: none;
-  }
-  .back {
-    font-weight: 500;
-    font-size: 16px;
-    color: #4c60eb;
-
-    span {
-      margin-right: 5px;
-    }
-  }
-
-  .name-author,
-  .name-posts {
-    font-weight: bold;
-    font-size: 22px;
-    color: #405169;
-  }
-
-  .name-posts {
-    font-weight: 500;
-    font-size: 20px;
-  }
-
-  .back,
-  .name-author,
-  .name-posts {
-    margin: 10px;
-  }
-
-  .author-header {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
-  }
-
-  .author-header-input {
-    background-color: #fff;
-    color: #a0bce4;
-    height: 35px;
-    width: 50%;
-    border: 1px solid rgba(76, 141, 235, 0.186481);
-  }
-  .author-header-input span {
-    padding: 5px;
-  }
-  .author-header-input input {
-    height: 32px;
-    width: 96%;
-    border: none;
-  }
-
-  ::placeholder {
-    color: #a0bce4;
-    font-size: 14px;
-  }
-
-  .single td {
-    padding: 8px 10px;
-  }
-`;
 
 const Author1 = () => {
   return (
@@ -85,9 +21,9 @@ const Author1 = () => {
       <p className="name-posts">Jenny Wilson's Post</p>
       <div className="author-header">
         <div className="author-header-input">
-          <span>
+          <p>
             <i className="fas fa-search"></i>
-          </span>
+          </p>
           <input
             type="search"
             className=""
@@ -95,22 +31,27 @@ const Author1 = () => {
             placeholder="Search for posts"
           />
         </div>
-        <div>
-          <span>Filter By:</span>
-          <select className="select">
-            <option value="0">Select Filter</option>
-            <option value="1">Date Posted</option>
-            <option value="2">No. of View</option>
-            <option value="3">No. of Shares</option>
-          </select>
+        <div className="projects">
+          <button>
+            Select Filter{" "}
+            <span className="filter">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
+          <ul>
+            <li>
+              <a href="#">Date Posted</a>
+            </li>
+            <li>
+              <a href="#">No. of View</a>
+            </li>
+            <li>
+              <a href="#">No. of Shares</a>
+            </li>
+          </ul>
         </div>
       </div>
-      {/* <div class="title-author">
-        <p>Author</p>
-        <p>
-          <button class="add-author">Add Author</button>
-        </p>
-      </div> */}
+
       <table class="content-table single">
         <thead>
           <tr>
@@ -236,9 +177,149 @@ const Author1 = () => {
           </tr>
         </tbody>
       </table>
-      <Pagination/>
+      <Pagination />
     </SingleAuthor>
   );
 };
+
+
+const SingleAuthor = styled(DashboardWrapper)`
+  ${Content}
+  a {
+    text-decoration: none;
+  }
+  .back {
+    font-weight: 500;
+    font-size: 16px;
+    color: #4c60eb;
+
+    span {
+      margin-right: 5px;
+    }
+  }
+
+  .content-table th,
+  .content-table td {
+    padding: 12px 5px;
+  }
+
+  .name-author,
+  .name-posts {
+    font-weight: bold;
+    font-size: 22px;
+    color: #405169;
+  }
+
+  .name-posts {
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .back,
+  .name-author,
+  .name-posts {
+    margin: 10px;
+  }
+
+  .author-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  .author-header-input {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    color: #a0bce4;
+    height: 35px;
+    width: 40%;
+    border: 1px solid rgba(76, 141, 235, 0.186481);
+  }
+  .author-header-input span {
+    padding: 5px;
+  }
+  .author-header-input input {
+    height: 32px;
+    width: 100%;
+    border: none;
+  }
+
+  input::placeholder {
+    color: #a0bce4;
+    font-size: 14px;
+  }
+  .projects {
+    position: relative;
+  }
+
+  .projects button {
+    color: rgba(38, 35, 50, 0.585856);
+    background-color: #fff;
+    padding: 5px 34px;
+    border: none;
+  }
+
+  .projects ul {
+    margin-top: 0px;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: white;
+    left: 0px;
+    list-style: none;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+  }
+
+  .projects li {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #dde9fb;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    line-height: 22px;
+    color: #405169;
+  }
+
+  .projects li:hover {
+    background-color: rgb(197, 173, 181);
+  }
+
+  .projects a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .projects button:focus + ul {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0px);
+  }
+
+  .filter {
+    padding-left: 12px;
+  }
+
+  .single td {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    .author-header-input input {
+      max-width: 100%;
+    }
+  }
+`;
 
 export default Author1;

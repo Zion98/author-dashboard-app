@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import styled from "styled-components";
 
 const AddWebsite = ({ handleToggle, setWebsites, websites }) => {
@@ -11,9 +11,9 @@ const AddWebsite = ({ handleToggle, setWebsites, websites }) => {
     
     const handleChange = (e) => {
       
-      const { value, name } = e.target;
-      let { id } = obj
-    setData({ id: count, [name]: value });
+    //   const { value, name } = e.target;
+    //   let { id } = obj
+    // setData({ id: count, [name]: value });
   };
 
 

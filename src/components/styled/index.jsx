@@ -7,11 +7,15 @@ export const Containers = styled.div`
     "nav content content";
   grid-template-columns: 70px auto;
   grid-template-rows: auto auto;
-  grid-gap: 4px 20px;
+  grid-gap: 0px 10px;
   background-color: #f9faff;
 
   input:focus {
     outline: none;
+  }
+
+  p {
+    margin: 0;
   }
 `;
 
@@ -21,11 +25,12 @@ export const DashboardWrapper = styled.div`
   margin-top: 70px;
   font-family: "Montserrat", sans-serif;
   border-radius: 5px;
-  height: 100%;
   margin-right: 16px;
 
-  .title {
+  .title-dashboard {
+    font-size: 24px;
     margin-bottom: 10px;
+    color: #405169;
   }
 `;
 
@@ -50,7 +55,7 @@ export const Content = css`
 
   .content-table th,
   .content-table td {
-    padding: 12px 15px;
+    padding: 12px 10px;
   }
 
   .content-table td {
@@ -82,7 +87,9 @@ export const CenterPosition = css`
 
 export const Form = styled.div`
   ${CenterPosition}
-
+  p {
+    margin: 0;
+  }
   .logo {
     text-align: center;
     width: 71px;

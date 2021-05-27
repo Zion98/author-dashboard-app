@@ -14,7 +14,6 @@ const state = {
         "#24bd1fdc",
         "#da8e14",
         "#bb1919",
-        // "#35014F",
       ],
       data: [65, 59, 80, 81, 56],
       borderWidth: 0,
