@@ -40,13 +40,13 @@ const Author1 = () => {
           </button>
           <ul>
             <li>
-              <a href="#">Date Posted</a>
+              <a>Date Posted</a>
             </li>
             <li>
-              <a href="#">No. of View</a>
+              <a>No. of View</a>
             </li>
             <li>
-              <a href="#">No. of Shares</a>
+              <a>No. of Shares</a>
             </li>
           </ul>
         </div>
