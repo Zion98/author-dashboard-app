@@ -237,7 +237,7 @@ const SingleAuthor = styled(DashboardWrapper)`
     width: 40%;
     border: 1px solid rgba(76, 141, 235, 0.186481);
   }
-  .author-header-input span {
+  .author-header-input p{
     padding: 5px;
   }
   .author-header-input input {

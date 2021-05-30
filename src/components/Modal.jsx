@@ -71,10 +71,9 @@ const ModalBox = styled.div`
     margin-bottom: 30px;
   }
 
-  ::placeholder {
-    color: #a0bce4;
+  input::placeholder {
     padding-left: 12px;
-    font-size: 16px;
+    font-size: 15px;
     color: #181426;
     mix-blend-mode: normal;
     opacity: 0.5;
