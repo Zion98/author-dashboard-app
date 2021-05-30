@@ -192,6 +192,7 @@ const SingleAuthor = styled(DashboardWrapper)`
     font-weight: 500;
     font-size: 16px;
     color: #4c60eb;
+   display: inline-block;
 
     span {
       margin-right: 5px;
@@ -218,7 +219,7 @@ const SingleAuthor = styled(DashboardWrapper)`
   .back,
   .name-author,
   .name-posts {
-    margin: 10px;
+    margin: 5px;
   }
 
   .author-header {
@@ -236,7 +237,7 @@ const SingleAuthor = styled(DashboardWrapper)`
     width: 40%;
     border: 1px solid rgba(76, 141, 235, 0.186481);
   }
-  .author-header-input span {
+  .author-header-input p{
     padding: 5px;
   }
   .author-header-input input {
