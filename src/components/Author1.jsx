@@ -4,7 +4,41 @@ import Pagination from "./Pagination";
 import "../styles/authors.css";
 import styled from "styled-components";
 import { DashboardWrapper, Content } from "./styled/index";
+import Select from "react-select";
 
+const options = [
+  { value: "date", label: "Date Posted" },
+  { value: "views", label: "No. of Views" },
+  { value: "shares", label: "No. of Shares" },
+];
+
+const customStyles = {
+  option: (provided, state) => ({
+    ...provided,
+    width: state.selectProps.width,
+    borderBottom: "1px solid #DDE9FB",
+    color: state.selectProps.menuColor,
+    paddingTop: 14,
+    paddingBottom: 14,
+    hover: "#DDE9FB",
+  }),
+
+  menuList: (provided, state) => ({
+    paddingTop: 0,
+    paddingBottom: 0,
+    background: "#fff",
+    hover: "#DDE9FB",
+  }),
+
+  control: (base, state) => ({
+    ...base,
+    border: state.isFocused ? 0 : 0,
+    boxShadow: state.isFocused ? 0 : 0,
+    "&:hover": {
+      border: state.isFocused ? 0 : 0,
+    },
+  }),
+};
 
 const Author1 = () => {
   return (
@@ -32,23 +66,13 @@ const Author1 = () => {
           />
         </div>
         <div className="projects">
-          <button>
-            Select Filter{" "}
-            <span className="filter">
-              <i class="fas fa-chevron-down"></i>
-            </span>
-          </button>
-          <ul>
-            <li>
-              <a href="/">Date Posted</a>
-            </li>
-            <li>
-              <a href="/">No. of View</a>
-            </li>
-            <li>
-              <a href="/">No. of Shares</a>
-            </li>
-          </ul>
+          <Select
+            options={options}
+            styles={customStyles}
+            isSearchable={false}
+            className="select-field"
+            placeholder={<div>Select filter</div>}
+          />
         </div>
       </div>
 
@@ -182,7 +206,6 @@ const Author1 = () => {
   );
 };
 
-
 const SingleAuthor = styled(DashboardWrapper)`
   ${Content}
   a {
@@ -192,7 +215,7 @@ const SingleAuthor = styled(DashboardWrapper)`
     font-weight: 500;
     font-size: 16px;
     color: #4c60eb;
-   display: inline-block;
+    display: inline-block;
 
     span {
       margin-right: 5px;
@@ -237,7 +260,7 @@ const SingleAuthor = styled(DashboardWrapper)`
     width: 40%;
     border: 1px solid rgba(76, 141, 235, 0.186481);
   }
-  .author-header-input p{
+  .author-header-input p {
     padding: 5px;
   }
   .author-header-input input {
@@ -250,61 +273,14 @@ const SingleAuthor = styled(DashboardWrapper)`
     color: #a0bce4;
     font-size: 14px;
   }
-  .projects {
-    position: relative;
+
+  .select-field {
+    width: 10rem;
+    font-size: 0.8rem;
   }
 
-  .projects button {
-    color: rgba(38, 35, 50, 0.585856);
-    background-color: #fff;
-    padding: 5px 34px;
-    border: none;
-  }
-
-  .projects ul {
-    margin-top: 0px;
-    position: absolute;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    background: white;
-    left: 0px;
-    list-style: none;
-    border-radius: 5px;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: all 0.4s ease;
-  }
-
-  .projects li {
-    width: 100%;
-    height: 100%;
-    border: 1px solid #dde9fb;
-    padding: 10px 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    line-height: 22px;
-    color: #405169;
-  }
-
-  .projects li:hover {
-    background-color: rgb(197, 173, 181);
-  }
-
-  .projects a {
-    color: black;
-    text-decoration: none;
-  }
-
-  .projects button:focus + ul {
-    opacity: 1;
-    pointer-events: all;
-    transform: translateY(0px);
+  .css-1okebmr-indicatorSeparator {
+    display: none;
   }
 
   .filter {
